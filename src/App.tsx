@@ -1,18 +1,17 @@
 import React from "react";
-import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
+import HashRouter from "../src/libs/router/HashRouter";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import Route from "./libs/router/Route";
 
 function App() {
   return (
     <>
       <header>Header</header>
       <HashRouter>
-        <Routes>
-          <Route path='/' element={<Navigate to={"/home"} />}/>
-          <Route path="/home" Component={Home} />
-          <Route path="/about" Component={About} />
-        </Routes>
+        <Route path="/home" component={Home} />
+        <Route path="/about" component={About} />
+
       </HashRouter>
     </>
   );
