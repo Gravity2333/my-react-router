@@ -1,5 +1,5 @@
 import { createHashHistory, History, Location } from "@/libs/history"
-import { createContext, useEffect, useState } from "react"
+import { createContext, useEffect, useLayoutEffect, useState } from "react"
 
 export interface Match {
     // Route的传参 path，比如 /list/:id
@@ -50,7 +50,7 @@ export default function Router({
     console.log(history)
     const [location, setLocation] = useState<Location>(history.location)
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         /** 监听history的改变 更新location */
         history.listen(({ location: _location }) => {
             setLocation(_location)

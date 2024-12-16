@@ -10,18 +10,22 @@ export default function Route(props: {
     component?: React.ComponentType,
     exact?: boolean,
     sensitive?: boolean;
-    children?: React.ReactNode
+    children?: React.ReactNode;
+    // 上层传下来的location
+    location?: Location,
+    // switch传递额computedMatch
+    computedMatch?: Match,
 }) {
-    
+
     return <RouterContext.Consumer>
         {context => {
             /** 获得传递下来的location */
-            const location = context.location
+            const location = props.location || context.location
             /** 计算match
              *   如果没有传递path参数，直接算是匹配上上层match
              *   传递了，直接调用matchPath计算是否匹配
              */
-            const match = props.path ? matchPath(location.pathname, props) : context.match
+            const match = props.computedMatch ? props.computedMatch : props.path ? matchPath(location.pathname, props) : context.match
             /** 匹配上了渲染，并且重新下发新的match 嵌套router*/
             return <RouterContext.Provider value={{
                 ...context,
