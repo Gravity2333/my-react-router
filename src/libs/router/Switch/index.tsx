@@ -3,7 +3,12 @@ import { Match, RouterContext } from "../Router";
 import matchPath from "../utils/matchPath";
 
 /** 只渲染第一个 */
-export default function Switch({ children }: { children?: JSX.Element[] }) {
+export default function Switch({ children }: { children?: JSX.Element[]|JSX.Element }) {
+    /** 归一化 */
+    if(children&&!Array.isArray(children)){
+        children = [children]
+    }
+
     return <RouterContext.Consumer>{
         ({ location, match }) => {
             let matchedChild: Match | null = null

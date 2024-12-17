@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   mode: "development",
@@ -12,7 +13,7 @@ module.exports = {
     clean: true,
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".jsx", ".jsx"],
+    extensions: [".tsx", ".ts", ".jsx", ".jsx",'.less'],
     mainFiles: ["index"],
     alias: {
       "@": path.resolve(__dirname, "./src"),
@@ -24,6 +25,19 @@ module.exports = {
         test: /\.(t|j)sx?$/,
         use: "babel-loader",
       },
+      {
+        test: /\.less$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+                modules: true
+            },
+        },
+          'less-loader'
+        ]
+      }
     ],
   },
 
@@ -32,6 +46,10 @@ module.exports = {
       template: "./template.html",
       inject: "body",
     }),
+    new MiniCssExtractPlugin({
+      filename: "css/[name].[contenthash].css", // 提取的 CSS 文件名
+      chunkFilename: "css/[id].css",
+    })
   ],
   devServer: {
     port: 41111,

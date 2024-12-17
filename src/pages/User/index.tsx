@@ -1,4 +1,8 @@
-export default function UserInfo(props: any){
+import Outlet from "@/libs/router/Outlet"
+
+export default function User(props: any){
     console.log(props)
-    return <><h1>User Info</h1></>
+    return <><header>User Info</header>
+    <Outlet/>
+    </>
 }
