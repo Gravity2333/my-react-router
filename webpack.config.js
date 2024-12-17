@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const ConvertRouterPlugin = require('./src/plugins/convert-router-plugin')
 
 module.exports = {
   mode: "development",
@@ -49,7 +50,8 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "css/[name].[contenthash].css", // 提取的 CSS 文件名
       chunkFilename: "css/[id].css",
-    })
+    }),
+    new ConvertRouterPlugin()
   ],
   devServer: {
     port: 41111,
