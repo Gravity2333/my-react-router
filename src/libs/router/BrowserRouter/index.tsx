@@ -1,11 +1,11 @@
 import { createBrowserHistory } from "@/libs/history";
-import Router from "../Router";
-
+import Router, { IRouter } from "../Router";
+interface IBrowserRouter extends Omit<IRouter, "history"> {}
 /**
  * 封装Browser Router
- * @param param0 
- * @returns 
+ * @param param0
+ * @returns
  */
-export default function BrowserRouter({ children }: { children?: React.ReactNode }) {
-    return <Router history={createBrowserHistory({})}>{children}</Router>
+export default function BrowserRouter(props: IBrowserRouter) {
+  return <Router history={createBrowserHistory({})} {...props} />;
 }

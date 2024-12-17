@@ -23,6 +23,7 @@ export const RouterContext = createContext<{
   history: History;
   location: Location;
   outlet?: JSX.Element;
+  loadingPage?: JSX.Element;
 }>({} as any);
 
 /* 下发 history */
@@ -41,14 +42,18 @@ function computeRootMatch(pathname: string): Match {
   };
 }
 
+export interface IRouter {
+  children?: React.ReactNode;
+  history?: History;
+  loadingPage?: JSX.Element;
+}
+
 export default function Router({
   children,
   /** 默认创建hash histroy */
   history = createHashHistory({}),
-}: {
-  children?: React.ReactNode;
-  history?: History;
-}) {
+  loadingPage,
+}: IRouter) {
   const [location, setLocation] = useState<Location>(history.location);
 
   useLayoutEffect(() => {
@@ -70,6 +75,7 @@ export default function Router({
         history,
         location,
         match: computeRootMatch(location.pathname),
+        loadingPage,
       }}
     >
       {/* 单独给histroy */}

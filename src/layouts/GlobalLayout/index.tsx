@@ -2,10 +2,10 @@ import Outlet from "@/libs/router/Outlet";
 import styles from "./index.less";
 import useHistory from "@/libs/router/hooks/useHistory";
 
-export default function Layout() {
+export default function GlobalLayout() {
   const history = useHistory();
   return (
-    <>
+    <div className={styles['page-container']}>
       <header className={styles.header}>
         <div className={styles["header__tab"]}>
           <a
@@ -54,13 +54,13 @@ export default function Layout() {
         </div>
       </header>
 
-      <div className={styles["header__content"]}>
+      <div className={styles["content"]}>
         <Outlet />
       </div>
 
       <footer>
         <p>&copy; 2024 My Website | All Rights Reserved</p>
       </footer>
-    </>
+    </div>
   );
 }

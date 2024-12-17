@@ -1,0 +1,73 @@
+/* LoadingPage.less */
+
+/* 全局设置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    overflow: hidden;
+  }
+  
+  /* Loading 容器 */
+  .loading-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Loader 动画 */
+  .loader {
+    border: 12px solid rgba(255, 255, 255, 0.2);
+    border-top: 12px solid #fff;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 1.5s linear infinite;
+    margin-bottom: 20px;
+  }
+  
+  /* 旋转动画 */
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Loading 文本样式 */
+  .loading-text {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    animation: fadeIn 1s ease-out infinite;
+  }
+  
+  /* 文本渐变动画 */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+  }
+  

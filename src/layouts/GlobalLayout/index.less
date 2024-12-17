@@ -1,3 +1,11 @@
+.page-container{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: start;
+    align-items: stretch;
+    height: 100%;
+    overflow: hidden;
+}
 /* Header 样式 */
 .header {
     background: linear-gradient(90deg, #4CAF50, #2E7D32);
@@ -6,10 +14,11 @@
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    position: fixed;
     top: 0;
     width: 100%;
     z-index: 10;
+
+    flex: 0 0 30px;
   }
   
   .header__tab {
@@ -53,15 +62,10 @@
   }
   
   /* Content 样式 */
-  .header__content {
-    padding: 80px 30px 30px; /* 给 header 留出空间 */
+  .content {
     background-color: #fff;
-    margin: 40px auto;
-    width: 80%;
-    max-width: 1200px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    flex: 1;
+    overflow: auto;
   }
   
   .header__content h1 {
@@ -81,10 +85,10 @@
   footer {
     background-color: #333;
     color: #fff;
-    padding: 20px 0;
     text-align: center;
     font-size: 0.9rem;
-    margin-top: 60px;
+    flex: 0 0 80px;
+    line-height: 80px;
   }
   
   footer p {

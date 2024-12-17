@@ -1,0 +1,68 @@
+
+  
+  .not-found-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+
+    transform: translate(-50%,-50%);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+  }
+  
+  .not-found-content {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .not-found-text h1 {
+    font-size: 150px;
+    font-weight: bold;
+    color: #ffcc00;
+    margin-bottom: 20px;
+  }
+  
+  .not-found-text h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .not-found-text p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+  
+  .back-home-button {
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    color: #333;
+    font-size: 1.1rem;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+  
+  .back-home-button:hover {
+    background-color: #ff9900;
+    transform: scale(1.1);
+  }
+  
+  @media (max-width: 600px) {
+    .not-found-text h1 {
+      font-size: 100px;
+    }
+  
+    .not-found-text h2 {
+      font-size: 1.5rem;
+    }
+  
+    .not-found-text p {
+      font-size: 1rem;
+    }
+  }
+  

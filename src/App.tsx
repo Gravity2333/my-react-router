@@ -1,33 +1,51 @@
 import React from "react";
 import HashRouter from "../src/libs/router/HashRouter";
-import Home from "./pages/Home";
 import About from "./pages/About";
 import Route from "./libs/router/Route";
-import UserInfo from "./pages/User";
 import Switch from "./libs/router/Switch";
 import Redirect from "./libs/router/Redirect";
-import UserList from "./pages/UserList";
-import Layout from "./pages/Layout";
-import User from "./pages/User";
+import LoadingPage from "./components/LoadingPage";
+import GlobalLayout from "./layouts/GlobalLayout";
+import NotFoundPage from "./components/NotFoundPage";
 
 function App() {
   return (
     <>
-      <HashRouter>
-        <Route path="/" component={Layout} >
+      <HashRouter loadingPage={<LoadingPage />}>
+        <Route path="/" component={GlobalLayout}>
           <Switch>
             <Redirect from="/" to="/home" />
-            <Route path="/home" component={Home} />
-            <Route path="/about" component={About} />
-            <Route path="/user" component={User}>
+            <Route
+              path="/home"
+              component={React.lazy(() => import("./pages/Home"))}
+            />
+            <Route
+              path="/about"
+              component={React.lazy(() => import("./pages/About"))}
+            />
+            <Route
+              path="/user"
+              component={React.lazy(() => import("./pages/User"))}
+            >
               <Switch>
                 <Redirect from="/user" to="/user/list" />
-                <Route path="/user/list" component={UserList} />
-                <Route path="/user/:id/info" component={UserInfo} />
-                <Route path="/user/:id/info" component={UserInfo} />
+                <Route
+                  path="/user/list"
+                  component={React.lazy(() => import("./pages/User"))}
+                />
+                <Route
+                  path="/user/:id/info"
+                  component={React.lazy(() => import("./pages/UserList"))}
+                />
+                <Route
+                  path="/user/:id/info"
+                  component={React.lazy(() => import("./pages/UserList"))}
+                />
+                <Route component={NotFoundPage}/>
               </Switch>
             </Route>
             <Route path="/about" component={About} />
+            <Route component={NotFoundPage}/>
           </Switch>
         </Route>
       </HashRouter>

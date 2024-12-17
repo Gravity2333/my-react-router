@@ -1,7 +1,7 @@
 import { pathToRegexp } from "path-to-regexp";
 import { Match, RouterContext } from "../Router";
 import { Location } from "@/libs/history";
-import React from "react";
+import React, { Suspense } from "react";
 import matchPath from "../utils/matchPath";
 
 export default function Route(props: {
@@ -16,7 +16,6 @@ export default function Route(props: {
   // switch传递额computedMatch
   computedMatch?: Match;
 }) {
-
   return (
     <RouterContext.Consumer>
       {(context) => {
@@ -91,11 +90,16 @@ function RouteCore({
         let content = null;
         if (component) {
           /** 由于是JSX.ELEMENT 需要借助compoent */
-          content = React.createElement(component, props as any);
+          /** 加入suspense，支持懒加载 */
+          content = (
+            <Suspense fallback={context?.loadingPage || "loading..."}>
+              {React.createElement(component, props as any)}
+            </Suspense>
+          );
         }
 
         if (render) {
-          content = render(props);
+          content = <Suspense fallback="loading..."> {render(props)}</Suspense>;
         }
 
         return (
