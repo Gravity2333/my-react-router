@@ -1,7 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const ConvertRouterPlugin = require('./src/plugins/convert-router-plugin')
 
 module.exports = {
   mode: "development",
@@ -12,6 +11,11 @@ module.exports = {
     filename: "js/bundle.js",
     chunkFilename: "js/[name]-[chunkhash:8].js",
     clean: true,
+  },
+  resolveLoader: {
+    extensions: ['.js','.json'],
+    modules: ['./src/loaders','node_modules'],
+    mainFiles: ['loader','main'],
   },
   resolve: {
     extensions: [".tsx", ".ts", ".jsx", ".jsx",'.less'],
@@ -38,6 +42,11 @@ module.exports = {
         },
           'less-loader'
         ]
+      },
+      {
+        // 解析router/js
+        test: /\/config\/router.js$/,
+        use: 'router-loader'
       }
     ],
   },
@@ -51,7 +60,6 @@ module.exports = {
       filename: "css/[name].[contenthash].css", // 提取的 CSS 文件名
       chunkFilename: "css/[id].css",
     }),
-    new ConvertRouterPlugin()
   ],
   devServer: {
     port: 41111,

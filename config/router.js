@@ -1,6 +1,6 @@
 export default {
     path: "/",
-    component: "@/layouts/GlobalLayout",
+    component: "../src/layouts/GlobalLayout",
     children: [
       {
         path: "/",
@@ -8,15 +8,15 @@ export default {
       },
       {
         path: "/home",
-        component: "@/pages/Home",
+        component: "../src/pages/Home",
       },
       {
         path: "/about",
-        component: "@/pages/About",
+        component: "../src/pages/About",
       },
       {
         path: "/user",
-        component: "@/pages/User",
+        component: "../src/pages/User",
         children: [
           {
             path: "/user",
@@ -24,19 +24,19 @@ export default {
           },
           {
             path: "/user/list",
-            component: "@/pages/UserList",
+            component: "../src/pages/UserList",
           },
           {
             path: "/user/list",
-            component: "@/pages/UserList",
+            component: "../src/pages/UserList",
           },
           {
-            component: "@/component/NotFoundPage",
+            component: "../src/components/NotFoundPage",
           },
         ],
       },
       {
-        component: "@/component/NotFoundPage",
+        component: "../src/components/NotFoundPage",
       },
     ],
   }

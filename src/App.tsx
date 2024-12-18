@@ -1,65 +1,58 @@
-import React from "react";
 import HashRouter from "../src/libs/router/HashRouter";
-import About from "./pages/About";
-import Route from "./libs/router/Route";
-import Redirect from "./libs/router/Redirect";
 import LoadingPage from "./components/LoadingPage";
-import GlobalLayout from "./layouts/GlobalLayout";
-import NotFoundPage from "./components/NotFoundPage";
 import useRoutes from "./libs/router/hooks/useRoutes";
-import Home from "./pages/Home";
-import User from "./pages/User";
-import UserList from "./pages/UserList";
-import routes from '../config/router.js'
+import routes from "../config/router.js";
 
-console.log(routes)
 function App() {
   return (
-    <HashRouter loadingPage={<LoadingPage />}>
-      {useRoutes({
-        path: "/",
-        component: GlobalLayout,
-        children: [
-          {
-            path: "/",
-            redirect: "/home",
-          },
-          {
-            path: "/home",
-            component: Home,
-          },
-          {
-            path: "/about",
-            component: About,
-          },
-          {
-            path: "/user",
-            component: User,
-            children: [
-              {
-                path: "/user",
-                redirect: "/user/list",
-              },
-              {
-                path: "/user/list",
-                component: UserList,
-              },
-              {
-                path: "/user/list",
-                component: UserList,
-              },
-              {
-                component: NotFoundPage,
-              },
-            ],
-          },
-          {
-            component: NotFoundPage,
-          },
-        ],
-      })}
-    </HashRouter>
+    <HashRouter loadingPage={<LoadingPage />}>{useRoutes(routes)}</HashRouter>
   );
+  // return (
+  //   <HashRouter loadingPage={<LoadingPage />}>
+  //     {useRoutes({
+  //       path: "/",
+  //       component: GlobalLayout,
+  //       children: [
+  //         {
+  //           path: "/",
+  //           redirect: "/home",
+  //         },
+  //         {
+  //           path: "/home",
+  //           component: Home,
+  //         },
+  //         {
+  //           path: "/about",
+  //           component: About,
+  //         },
+  //         {
+  //           path: "/user",
+  //           component: User,
+  //           children: [
+  //             {
+  //               path: "/user",
+  //               redirect: "/user/list",
+  //             },
+  //             {
+  //               path: "/user/list",
+  //               component: UserList,
+  //             },
+  //             {
+  //               path: "/user/list",
+  //               component: UserList,
+  //             },
+  //             {
+  //               component: NotFoundPage,
+  //             },
+  //           ],
+  //         },
+  //         {
+  //           component: NotFoundPage,
+  //         },
+  //       ],
+  //     })}
+  //   </HashRouter>
+  // );
 
   // return (
   //   <>

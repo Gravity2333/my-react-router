@@ -67,6 +67,9 @@ export default function Router({
         }
       });
     });
+    if(history.location.pathname === ''){
+      history.push('/')
+    }
   }, []);
 
   return (
