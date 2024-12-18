@@ -64,7 +64,7 @@ module.exports = {
     }),
   ],
   devServer: {
-    port: 41111,
+    port: 3000,
     hot: false,
     historyApiFallback: true, // 开启 historyApiFallback
     open: true,
