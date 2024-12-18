@@ -1,0 +1,45 @@
+/* Sidebar 样式 */
+.sidebar {
+  position: fixed; /* 固定在页面左侧 */
+  top: 0;
+  left: 0;
+  width: 250px; /* 侧边栏宽度 */
+  height: 100vh; /* 高度占满屏幕 */
+  background-color: #f4f4f4; /* 背景颜色 */
+  padding: 20px; /* 内边距 */
+  box-sizing: border-box; /* 包括 padding 和 border 的尺寸 */
+  overflow-y: auto; /* 超出内容时，允许滚动 */
+  border-right: 1px solid #ddd; /* 右侧边框 */
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.menu {
+  list-style-type: none; /* 去除列表的默认样式 */
+  padding: 0;
+  margin: 0;
+}
+
+.menuItem {
+  margin-bottom: 15px; /* 每个菜单项的间隔 */
+}
+
+.menuLink {
+  text-decoration: none; /* 去掉链接的下划线 */
+  font-size: 18px;
+  color: #333; /* 默认字体颜色 */
+  transition: color 0.3s ease; /* 添加渐变效果 */
+  display: block; /* 使链接占满整个 li */
+  padding: 10px; /* 增加点击区域 */
+  border-radius: 4px; /* 圆角效果 */
+}
+
+.menuLink:hover {
+  color: #007bff; /* 悬停时改变字体颜色 */
+  background-color: #e0f7ff; /* 悬停时改变背景颜色 */
+}

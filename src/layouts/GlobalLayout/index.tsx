@@ -15,16 +15,16 @@ export default function GlobalLayout() {
               history.push("/home");
             }}
           >
-            Home
+            首页
           </a>
           <a
             href="#"
             onClick={(e) => {
               e.preventDefault();
-              history.push("/user");
+              history.push("/docs");
             }}
           >
-            User
+            文档
           </a>
           <a
             href="#"
@@ -33,7 +33,7 @@ export default function GlobalLayout() {
               history.push("/about");
             }}
           >
-            About
+            关于作者
           </a>
         </div>
         <div className={styles["header__navigation"]}>
@@ -42,14 +42,14 @@ export default function GlobalLayout() {
               history.back();
             }}
           >
-            Back
+            后退
           </button>
           <button
             onClick={() => {
               history.forward();
             }}
           >
-            Forward
+            前进
           </button>
         </div>
       </header>
@@ -57,10 +57,6 @@ export default function GlobalLayout() {
       <div className={styles["content"]}>
         <Outlet />
       </div>
-
-      <footer>
-        <p>&copy; 2024 My Website | All Rights Reserved</p>
-      </footer>
     </div>
   );
 }

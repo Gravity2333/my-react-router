@@ -1,6 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   mode: "development",
@@ -11,14 +11,16 @@ module.exports = {
     filename: "js/bundle.js",
     chunkFilename: "js/[name]-[chunkhash:8].js",
     clean: true,
+    // 增加 publicPath 把 src="/js/bundle.js" 使用绝对路径
+    publicPath: "/",
   },
   resolveLoader: {
-    extensions: ['.js','.json'],
-    modules: ['./src/loaders','node_modules'],
-    mainFiles: ['loader','main'],
+    extensions: [".js", ".json"],
+    modules: ["./src/loaders", "node_modules"],
+    mainFiles: ["loader", "main"],
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".jsx", ".jsx",'.less'],
+    extensions: [".tsx", ".ts", ".jsx", ".jsx", ".less"],
     mainFiles: ["index"],
     alias: {
       "@": path.resolve(__dirname, "./src"),
@@ -35,19 +37,19 @@ module.exports = {
         use: [
           MiniCssExtractPlugin.loader,
           {
-            loader: 'css-loader',
+            loader: "css-loader",
             options: {
-                modules: true
+              modules: true,
             },
-        },
-          'less-loader'
-        ]
+          },
+          "less-loader",
+        ],
       },
       {
         // 解析router/js
         test: /\/config\/router.js$/,
-        use: 'router-loader'
-      }
+        use: "router-loader",
+      },
     ],
   },
 
@@ -64,6 +66,7 @@ module.exports = {
   devServer: {
     port: 41111,
     hot: false,
-    historyApiFallback: true,
+    historyApiFallback: true, // 开启 historyApiFallback
+    open: true,
   },
 };

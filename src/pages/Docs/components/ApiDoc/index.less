@@ -1,0 +1,132 @@
+.apiDoc {
+    padding: 40px;
+    background-color: #f4f6f8;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .apiSection {
+    margin-bottom: 50px; /* 增加section之间的间距 */
+    padding: 30px; /* 增加内部padding */
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 调整阴影 */
+  }
+  
+  h1 {
+    font-size: 2.4rem; /* 增加标题大小 */
+    color: #333;
+    margin-bottom: 40px; /* 增加标题与内容之间的间距 */
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  h2 {
+    font-size: 1.8rem; /* 增加小标题大小 */
+    color: #333;
+    margin-bottom: 15px; /* 增加小标题与内容之间的间距 */
+    font-weight: 500;
+  }
+  
+  /* 调整段落样式 */
+  p {
+    font-size: 1rem; /* 增加段落字体大小 */
+    line-height: 1.8;
+    margin-bottom: 20px; /* 增加段落之间的间距 */
+    color: #555;
+    text-align: justify; /* 添加段落对齐 */
+  }
+  
+  /* 增加表格参数样式 */
+  .api-params {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .api-params th, .api-params td {
+    padding: 15px 20px;
+    text-align: left;
+  }
+  
+  .api-params th {
+    background-color: #007bff;
+    color: white;
+    font-size: 1rem;
+  }
+  
+  .api-params td {
+    background-color: #f9f9f9;
+    color: #333;
+    font-size: 1rem;
+  }
+  
+  .api-params tr:nth-child(even) td {
+    background-color: #f1f1f1;
+  }
+  
+  /* 高亮代码块 */
+  .code-block {
+    background-color: #282c34;
+    color: #f8f8f2;
+    padding: 20px;
+    font-size: 1rem;
+    border-radius: 6px;
+    margin: 20px 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-x: auto;
+  }
+  
+  /* 示例请求/响应数据 */
+  .api-examples {
+    margin-top: 30px;
+  }
+  
+  .api-examples .example-title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #007bff;
+  }
+  
+  .api-examples pre {
+    background-color: #f1f1f1;
+    color: #333;
+    padding: 20px;
+    font-size: 1rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  
+  /* 为了页面适配更好的响应式布局 */
+  @media (max-width: 768px) {
+    .apiDoc {
+      padding: 20px;
+    }
+  
+    .apiSection {
+      padding: 20px;
+    }
+  
+    h1 {
+      font-size: 1.8rem;
+    }
+  
+    h2 {
+      font-size: 1.4rem;
+    }
+  
+    p {
+      font-size: 0.9rem;
+    }
+  
+    .code-block {
+      padding: 15px;
+      font-size: 0.9rem;
+    }
+  }
+  

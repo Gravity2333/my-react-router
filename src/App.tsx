@@ -2,10 +2,11 @@ import HashRouter from "../src/libs/router/HashRouter";
 import LoadingPage from "./components/LoadingPage";
 import useRoutes from "./libs/router/hooks/useRoutes";
 import routes from "../config/router.js";
+import BrowserRouter from "./libs/router/BrowserRouter";
 
 function App() {
   return (
-    <HashRouter loadingPage={<LoadingPage />}>{useRoutes(routes)}</HashRouter>
+    <BrowserRouter loadingPage={<LoadingPage />}>{useRoutes(routes)}</BrowserRouter>
   );
   // return (
   //   <HashRouter loadingPage={<LoadingPage />}>

@@ -15,25 +15,8 @@ export default {
         component: "../src/pages/About",
       },
       {
-        path: "/user",
-        component: "../src/pages/User",
-        children: [
-          {
-            path: "/user",
-            redirect: "/user/list",
-          },
-          {
-            path: "/user/list",
-            component: "../src/pages/UserList",
-          },
-          {
-            path: "/user/list",
-            component: "../src/pages/UserList",
-          },
-          {
-            component: "../src/components/NotFoundPage",
-          },
-        ],
+        path: "/docs",
+        component: "../src/pages/Docs",
       },
       {
         component: "../src/components/NotFoundPage",

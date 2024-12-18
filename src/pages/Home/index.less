@@ -1,89 +1,111 @@
-// /* WelcomePage.css */
-// * {
-//   box-sizing: border-box;
-//   margin: 0;
-//   padding: 0;
-// }
+/* WelcomePage.module.less */
+@primary-color: #4caf50; /* 主色 */
+@bg-color: #f4f7fc; /* 背景色 */
+@header-bg: #333; /* 头部背景色 */
+@footer-bg: #282828; /* 底部背景色 */
+@text-color: #fff; /* 文字颜色 */
+@link-color: #4caf50; /* 链接颜色 */
+@link-hover-color: #45a049; /* 链接悬停颜色 */
 
-// body {
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   height: 100vh;
-//   color: white;
-//   font-family: Arial, sans-serif;
-//   background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-// }
-
-.welcome-page {
-  padding: 30px;
-  color: #333;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+strong{
+  color: rgb(24, 144, 255);
 }
 
-.header {
-  margin-bottom: 40px;
+.container {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Arial', sans-serif;
+  background-color: @bg-color;
+  height: 100%;
+}
+
+.mainContextHeader {
+  background-color: @header-bg;
+  color: @text-color;
+  padding: 20px;
   text-align: center;
-}
-
-.header h1 {
-  margin-bottom: 10px;
-  font-size: 2.5rem;
-}
-
-.header p {
-  color: #555;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  flex: 0;
   font-size: 1.2rem;
 }
 
-.content {
-  margin-bottom: 30px;
+.mainContextHeader h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.mainContent {
+  flex: 1;
+  padding: 40px 20px;
+  overflow: auto;
 }
 
 .intro {
-  margin-bottom: 40px;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
 }
 
 .intro h2 {
-  margin-bottom: 10px;
-  font-size: 1.8rem;
-}
-
-.route-info h2 {
+  font-size: 2rem;
   margin-bottom: 20px;
-  font-size: 1.8rem;
 }
 
-.route-card {
-  margin-bottom: 20px;
-  padding: 15px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.intro p {
+  font-size: 1.1rem;
+  line-height: 2;
+  color: #333;
 }
 
-.route-card h3 {
-  margin-bottom: 10px;
-  font-size: 1.4rem;
+.intro ul {
+  list-style-type: none;
+  padding-left: 0;
 }
 
-.route-card p {
+h3{margin: 20px 0px;}
+
+h3,.intro li {
   margin-bottom: 10px;
   font-size: 1rem;
+  color: #555;
 }
 
-.route-card code {
-  padding: 5px;
-  color: #007acc;
-  background-color: #e6f7ff;
-  border-radius: 5px;
+.intro li strong {
+  color: @primary-color;
 }
 
-footer {
-  margin-top: 40px;
-  color: #888;
-  font-size: 0.9rem;
+.footer {
+  background-color: @footer-bg;
+  color: @text-color;
   text-align: center;
+  padding: 15px 0;
+  font-size: 1rem;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+a {
+  color: @link-color;
+  text-decoration: none;
+}
+
+a:hover {
+  color: @link-hover-color;
+}
+
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .intro h2 {
+    font-size: 1.5rem;
+  }
+
+  .intro p {
+    font-size: 1rem;
+  }
 }

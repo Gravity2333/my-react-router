@@ -1,63 +1,46 @@
-import styles from './index.less'
-import React from "react";
+import React from 'react';
+import styles from './index.less';  // 假设你有样式文件
 
-function Home() {
+const Home = () => {
   return (
-    <>
-      <div className={styles["welcome-page"]}>
-        <header className={styles["header"]}>
-          <h1>Welcome to My React Router Demo</h1>
-          <p>Learn how routing works in React</p>
-        </header>
+    <div className={styles.container}>
+      <header className={styles.mainContextHeader}>
+        <h1>My-React-Router</h1>
+        <p className={styles.subHeader}>一个简洁轻量化的React-Router实现</p>
+      </header>
 
-        <div className={styles["content"]}>
-          <section className={styles["intro"]}>
-            <h2>About This App</h2>
-            <p>
-              This application demonstrates how to implement routing in React
-              using
-              <strong>HashRouter</strong>, <strong>Switch</strong>,{" "}
-              <strong>Route</strong>, and <strong>Redirect</strong>.
-            </p>
-          </section>
+      <main className={styles.mainContent}>
+        <section className={styles.intro}>
+          <h2 className={styles.sectionTitle}>关于本项目</h2>
+          <p className={styles.sectionDescription}>
+            本项目通过相对简单的代码，实现了React-Router-DOM的基本功能，你可以相对轻松地了解其工作原理
+            你可以在项目目录/src/libs下找到源代码 并且通过 <strong>npm run build</strong> 对其进行打包
+          </p>
 
-          <section className={styles["route-info"]}>
-            <h2>Routes in This App</h2>
-            <div className={styles["route-card"]}>
-              <h3>Home Route</h3>
-              <p>
-                URL: <code>/home</code>
-              </p>
-              <p>Displays the homepage content.</p>
-            </div>
-            <div className={styles["route-card"]}>
-              <h3>About Route</h3>
-              <p>
-                URL: <code>/about</code>
-              </p>
-              <p>Displays information about the app.</p>
-            </div>
-            <div className={styles["route-card"]}>
-              <h3>User Route</h3>
-              <p>
-                URL: <code>/user</code> (redirects to <code>/user/list</code>)
-              </p>
-              <p>Shows the user list or user details.</p>
-              <ul>
-                <li>
-                  <code>/user/list</code> - Displays the user list.
-                </li>
-                <li>
-                  <code>/user/:id/info</code> - Displays information for a
-                  specific user.
-                </li>
-              </ul>
-            </div>
-          </section>
-        </div>
-      </div>
-    </>
+          <div className={styles.features}>
+            <h3>实现的组件</h3>
+            <ul className={styles.featureList}>
+              <li><strong>HashRouter</strong> — 路由模式</li>
+              <li><strong>BrowserRouter</strong> — 支持HTML5历史记录</li>
+              <li><strong>Router</strong> — 路由容器</li>
+              <li><strong>Switch</strong> — 选择性渲染路由</li>
+              <li><strong>Redirect</strong> — 重定向功能</li>
+              <li><strong>Route</strong> — 路由定义</li>
+            </ul>
+          </div>
+
+          <div className={styles.hooks}>
+            <h3>实现的Hooks</h3>
+            <ul className={styles.hookList}>
+              <li><strong>useHistory</strong> — 路由历史管理</li>
+              <li><strong>useRoutes</strong> — 动态路由配置</li>
+              <li><strong>useOutlet</strong> — 嵌套路由渲染</li>
+            </ul>
+          </div>
+        </section>
+      </main>
+    </div>
   );
-}
+};
 
 export default Home;
