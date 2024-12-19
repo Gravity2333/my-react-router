@@ -87,7 +87,7 @@ function RouteCore({
          * 即 有component/render时 把children内容保存
          * route的children必须用Outlet渲染
          */
-        let content = null;
+        let content = outlet;
         if (component) {
           /** 由于是JSX.ELEMENT 需要借助compoent */
           /** 加入suspense，支持懒加载 */

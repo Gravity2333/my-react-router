@@ -19,6 +19,10 @@ export default {
         component: "../src/pages/Docs",
       },
       {
+        path: "/embed",
+        component: "../src/pages/Embed",
+      },
+      {
         component: "../src/components/NotFoundPage",
       },
     ],

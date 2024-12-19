@@ -1,9 +1,8 @@
-import Outlet from "@/libs/router/Outlet";
 import styles from "./index.less";
-import useHistory from "@/libs/router/hooks/useHistory";
+import { UseRouterIncomingProps } from "@/libs/useRouter/core/router/typings";
+import {Outlet} from "@/hooks/useRouter";
 
-export default function GlobalLayout() {
-  const history = useHistory();
+export default function UseRouterLayout({ history }: UseRouterIncomingProps) {
   return (
     <div className={styles["page-container"]}>
       <header className={styles.header}>
@@ -21,19 +20,10 @@ export default function GlobalLayout() {
             href="#"
             onClick={(e) => {
               e.preventDefault();
-              history.push("/docs");
+              history.push("/user");
             }}
           >
-            文档
-          </a>
-          <a
-            href="#"
-            onClick={(e) => {
-              e.preventDefault();
-              history.push("/embed");
-            }}
-          >
-            内嵌 useRouter展示
+            用户
           </a>
           <a
             href="#"
