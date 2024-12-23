@@ -3,11 +3,13 @@ import LoadingPage from "./components/LoadingPage";
 import useRoutes from "./libs/router/hooks/useRoutes";
 import routes from "../config/router.js";
 import BrowserRouter from "./libs/router/BrowserRouter";
+import Embed from "./pages/Embed";
 
 function App() {
   return (
     <BrowserRouter loadingPage={<LoadingPage />}>{useRoutes(routes)}</BrowserRouter>
   );
+
   // return (
   //   <HashRouter loadingPage={<LoadingPage />}>
   //     {useRoutes({

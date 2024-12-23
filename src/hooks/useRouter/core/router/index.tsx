@@ -5,6 +5,7 @@ import {
   useContext,
   useEffect,
   useLayoutEffect,
+  useMemo,
   useRef,
   useState,
 } from "react";
@@ -133,7 +134,7 @@ function Router({
   children?: React.ReactNode;
 }) {
   const [location, setLocation] = useState<Location>(history.location);
- 
+
   useLayoutEffect(() => {
     history.listen(({ location: _location }) => {
       setLocation((prevLocation) => {
@@ -147,7 +148,7 @@ function Router({
 
     history.push("/");
   }, []);
-  console.log('router');
+
   return (
     <UseRouterContext.Provider
       value={{
@@ -163,9 +164,8 @@ function Router({
     </UseRouterContext.Provider>
   );
 }
-
 /** Route组件 */
-function Route(props: {
+const Route = React.memo(function (props: {
   path?: string;
   component?: React.ComponentType<UseRouterIncomingProps>;
   /** 渲染函数 用来配置拦截 */
@@ -179,72 +179,69 @@ function Route(props: {
   /** 子节点 */
   children?: React.ReactNode;
 }) {
- 
-  return (
-    <UseRouterContext.Consumer>
-      {(context) => {
-        const location = props.location || context.location;
-        const match = props.computedMatch
-          ? props.computedMatch
-          : props.path
-          ? _matchPath(location.pathname, {
-              path: props.path,
-              /** 有children 就模糊匹配 */
-              exact: !props.children,
-            })
-          : context.match;
+  const context = useContext(UseRouterContext);
+  const location = props.location || context.location;
 
-        if (!match) return null;
-        // 计算渲染
-        // 生成outlet
-        const outlet = (() => {
-          /** 如果有children 直接渲染即可 不需要传入router incoming props
-           * 因为如果children是普通组件 不需要传入
-           * 如果是路由组件Route 其内部会传入
-           */
-          /** 判断一下 children是不是function，如果是就调用一下 */
-          if (props.children) {
-            if (typeof props.children === "function") {
-              return (props.children as any)();
-            } else {
-              return props.children;
-            }
-          }
-        })();
+  const match = useMemo(() => {
+    if (props.computedMatch) return props.computedMatch;
+    if (props.path) {
+      return _matchPath(location.pathname, {
+        path: props.path,
+        exact: !props.children, // 如果有children，使用模糊匹配
+      });
+    }
+    return context.match;
+  }, [location.pathname, props.path, props.children, context.match]);
 
-        const IncomingRouterProps = {
-          history: context.history,
-          location: location,
-          match,
-        };
+  if (!match) return null;
 
-        /** 如果有component/render的情况下，还有子节点，说明子节点需要用outlet渲染，要保存到Context上 */
-        return (
-          <UseRouterContext.Provider
-            value={{
-              ...context,
-              /** 挂载outlet返回 */
-              outlet,
-            }}
-          >
-            {/* Suspense用来支持React.lazy 实现路由懒加载 */}
-            <Suspense fallback={context.loadingPage}>
-              {props.render
-                ? props.render(IncomingRouterProps)
-                : props.component
-                ? React.createElement(
-                    /** 注意 这里的components还没有实例化 需要手动调用createElement 并且传入参数 */
-                    props.component,
-                    IncomingRouterProps as any
-                  )
-                : outlet}
-            </Suspense>
-          </UseRouterContext.Provider>
-        );
-      }}
-    </UseRouterContext.Consumer>
-  );
-}
+  const IncomingRouterProps = {
+    history: context.history,
+    location,
+    match,
+  };
+
+  const [routeContent, setContent] = useState(<></>);
+
+  useEffect(() => {
+    // 生成outlet
+    const outlet = (() => {
+      /** 如果有children 直接渲染即可 不需要传入router incoming props
+       * 因为如果children是普通组件 不需要传入
+       * 如果是路由组件Route 其内部会传入
+       */
+      /** 判断一下 children是不是function，如果是就调用一下 */
+      if (props.children) {
+        if (typeof props.children === "function") {
+          return (props.children as any)();
+        } else {
+          return props.children;
+        }
+      }
+    })();
+    /** 如果有component/render的情况下，还有子节点，说明子节点需要用outlet渲染，要保存到Context上 */
+    setContent(
+      <UseRouterContext.Provider
+        value={{
+          ...context,
+          /** 挂载outlet返回 */
+          outlet,
+        }}
+      >
+        {/* Suspense用来支持React.lazy 实现路由懒加载 */}
+        <Suspense fallback={context.loadingPage}>
+          {props.render
+            ? props.render(IncomingRouterProps)
+            : props.component
+            ? React.createElement(props.component, IncomingRouterProps)
+            : outlet}
+        </Suspense>
+      </UseRouterContext.Provider>
+    );
+  }, []);
+
+  return routeContent;
+});
 
 /** Swicth组件 保证只运行一个 */
 function Switch({ children = [] }: { children?: JSX.Element[] | JSX.Element }) {

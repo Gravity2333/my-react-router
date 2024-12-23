@@ -1,9 +1,10 @@
 import LoadingPage from "@/components/LoadingPage";
-import React, { useCallback, useEffect, useState } from "react";
+import React from "react";
 import useRouter from "@/hooks/useRouter";
 import MiniBrowser from "@/components/MiniBrowser";
 
 function Embed() {
+  console.log("embed");
   const [outlet, history] = useRouter({
     loadingPage: <LoadingPage />,
     routes: {
