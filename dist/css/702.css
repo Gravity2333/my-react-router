@@ -1,0 +1,253 @@
+/* Sidebar 样式 */
+.E02DebYPNVPOXf7lTH1L {
+  position: fixed;
+  /* 固定在页面左侧 */
+  top: 30;
+  left: 0;
+  width: 250px;
+  /* 侧边栏宽度 */
+  height: 100vh;
+  /* 高度占满屏幕 */
+  background-color: #f4f4f4;
+  /* 背景颜色 */
+  padding: 20px;
+  /* 内边距 */
+  box-sizing: border-box;
+  /* 包括 padding 和 border 的尺寸 */
+  overflow-y: auto;
+  /* 超出内容时，允许滚动 */
+  border-right: 1px solid #ddd;
+  /* 右侧边框 */
+}
+.GvmtLk00C6eR3rWgDg82 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+.PQvall5WZchwNMQ_TQGF {
+  list-style-type: none;
+  /* 去除列表的默认样式 */
+  padding: 0;
+  margin: 0;
+}
+.aXo9wxtLsz2vMhkw97uU {
+  margin-bottom: 15px;
+  /* 每个菜单项的间隔 */
+}
+.UZgJicaI4jce0zqYyOsu {
+  text-decoration: none;
+  /* 去掉链接的下划线 */
+  font-size: 18px;
+  color: #333;
+  /* 默认字体颜色 */
+  transition: color 0.3s ease;
+  /* 添加渐变效果 */
+  display: block;
+  /* 使链接占满整个 li */
+  padding: 10px;
+  /* 增加点击区域 */
+  border-radius: 4px;
+  /* 圆角效果 */
+}
+.UZgJicaI4jce0zqYyOsu:hover {
+  color: #007bff;
+  /* 悬停时改变字体颜色 */
+  background-color: #e0f7ff;
+  /* 悬停时改变背景颜色 */
+}
+
+.wa5VGvIg4u7jXwlIq7UL {
+  flex: 1;
+  padding: 20px;
+  margin-left: 280px;
+}
+.q6RxoxIRJo9qLLIG6ens {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.DELz2oFJ9Eb7h7HuOVCu {
+  font-size: 16px;
+  color: #555;
+}
+
+.mTKnst0wuMAGMxidjpoi {
+  display: flex;
+}
+.eZKZwEnHEdvp4Yg8Ka1t {
+  flex: 1;
+  padding-left: 20px;
+}
+
+.wMebx_s1uj6PnPgGY2uO {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.jXNnqkWYf0GAjqBu84Lw {
+  background-color: #0044cc;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+.wxPN71L8O2dhFyb_lYu0 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.GuuNir9rQ3Du3gQr19ZB {
+  font-size: 1.2rem;
+}
+.pS8VP56IrEWE0eodtLBc {
+  padding: 40px;
+  background-color: #fff;
+  flex: 1;
+}
+.pVX9KfkH7C4bdMGB1jxf {
+  margin-bottom: 40px;
+}
+.kzEwppxcWuoEu0pQwiW7 {
+  font-size: 1.8rem;
+  color: #0044cc;
+  margin-bottom: 10px;
+}
+code {
+  font-family: monospace;
+  background-color: #f1f1f1;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+pre {
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 4px;
+  overflow-x: auto;
+  font-size: 1rem;
+}
+
+.EsJYimDxbAoulaYwuPqH {
+  padding: 40px;
+  background-color: #f4f6f8;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Roboto', sans-serif;
+}
+.lDkJXSecChKVLTWEu9dA {
+  margin-bottom: 50px;
+  /* 增加section之间的间距 */
+  padding: 30px;
+  /* 增加内部padding */
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  /* 调整阴影 */
+}
+h1 {
+  font-size: 2.4rem;
+  /* 增加标题大小 */
+  color: #333;
+  margin-bottom: 40px;
+  /* 增加标题与内容之间的间距 */
+  text-align: center;
+  font-weight: bold;
+}
+h2 {
+  font-size: 1.8rem;
+  /* 增加小标题大小 */
+  color: #333;
+  margin-bottom: 15px;
+  /* 增加小标题与内容之间的间距 */
+  font-weight: 500;
+}
+/* 调整段落样式 */
+p {
+  font-size: 1rem;
+  /* 增加段落字体大小 */
+  line-height: 1.8;
+  margin-bottom: 20px;
+  /* 增加段落之间的间距 */
+  color: #555;
+  text-align: justify;
+  /* 添加段落对齐 */
+}
+/* 增加表格参数样式 */
+.snpdnB0qkhjiwvlQmzhG {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+.snpdnB0qkhjiwvlQmzhG th,
+.snpdnB0qkhjiwvlQmzhG td {
+  padding: 15px 20px;
+  text-align: left;
+}
+.snpdnB0qkhjiwvlQmzhG th {
+  background-color: #007bff;
+  color: white;
+  font-size: 1rem;
+}
+.snpdnB0qkhjiwvlQmzhG td {
+  background-color: #f9f9f9;
+  color: #333;
+  font-size: 1rem;
+}
+.snpdnB0qkhjiwvlQmzhG tr:nth-child(even) td {
+  background-color: #f1f1f1;
+}
+/* 高亮代码块 */
+.PEb9UJPR3NLEGHR7wqgA {
+  background-color: #282c34;
+  color: #f8f8f2;
+  padding: 20px;
+  font-size: 1rem;
+  border-radius: 6px;
+  margin: 20px 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-x: auto;
+}
+/* 示例请求/响应数据 */
+.CaLsgtdxEvy2iVTrB5i3 {
+  margin-top: 30px;
+}
+.CaLsgtdxEvy2iVTrB5i3 .vQ2kKjQST3hC6CBfsUrW {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #007bff;
+}
+.CaLsgtdxEvy2iVTrB5i3 pre {
+  background-color: #f1f1f1;
+  color: #333;
+  padding: 20px;
+  font-size: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+/* 为了页面适配更好的响应式布局 */
+@media (max-width: 768px) {
+  .EsJYimDxbAoulaYwuPqH {
+    padding: 20px;
+  }
+  .lDkJXSecChKVLTWEu9dA {
+    padding: 20px;
+  }
+  h1 {
+    font-size: 1.8rem;
+  }
+  h2 {
+    font-size: 1.4rem;
+  }
+  p {
+    font-size: 0.9rem;
+  }
+  .PEb9UJPR3NLEGHR7wqgA {
+    padding: 15px;
+    font-size: 0.9rem;
+  }
+}
+

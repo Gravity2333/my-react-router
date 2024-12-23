@@ -1,0 +1,82 @@
+/* LoadingPage.less */
+/* 全局设置 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Arial', sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  overflow: hidden;
+}
+/* Loading 容器 */
+.L1KiHMmBCTXaA7vFu8ne {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* Loader 动画 */
+.BbWbVJFywssU0H0ik2iL {
+  border: 12px solid rgba(255, 255, 255, 0.2);
+  border-top: 12px solid #fff;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: ynaZPzRpbFyioayzVjY9 1.5s linear infinite;
+  margin-bottom: 20px;
+}
+/* 旋转动画 */
+@keyframes ynaZPzRpbFyioayzVjY9 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* Loading 文本样式 */
+.Or9qW63Q5VDjt6U8tF_1 {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  animation: lTAQyrbpQbDuzEdkXizo 1s ease-out infinite;
+}
+/* 文本渐变动画 */
+@keyframes lTAQyrbpQbDuzEdkXizo {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  height: 100%;
+}
+html {
+  scroll-behavior: smooth;
+}
+
