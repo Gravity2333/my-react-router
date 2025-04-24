@@ -1,4 +1,4 @@
-# my-react-router
+# my-react-router 一个更加优化过的实现
 
 `my-react-router` 是一个轻量级的 React 路由实现，旨在帮助你理解 React 路由的核心原理。它提供了对路由的基本功能支持，包括 `HashRouter` 和 `BrowserRouter`，以及用于组件懒加载的 `React.lazy` 支持。
 
