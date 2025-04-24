@@ -1,6 +1,6 @@
 import { To } from "@/libs/history";
 import { useEffect, useRef } from "react";
-import useHistory from "../hooks/useHistory";
+import useHistory from "../hooks/useNavigate";
 
 export default function Redirect({
     to
