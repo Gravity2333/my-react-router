@@ -9,8 +9,9 @@ export default function Router({
   children,
 }: {
   history: History;
-  children: JSX.Element;
+  children?: JSX.Element;
 }) {
+  /** 设置 routerContextValue 避免每次刷新的时候Context有不必要的更新 */
   const [routerContextValue, setRouterContextValue] =
     useState<RouterContextType>({
       history,
@@ -19,6 +20,7 @@ export default function Router({
     } as any);
 
   useEffect(() => {
+    /** 初始化的时候注册监听事件 */
     const unlisten = history.listen(({ location }) => {
       setRouterContextValue((prev) => ({
         ...prev,
@@ -26,7 +28,7 @@ export default function Router({
       }));
     });
 
-    // 初始化
+    /** 初始化push(/) */
     history.push("/");
 
     return unlisten;
