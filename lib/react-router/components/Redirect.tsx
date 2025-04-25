@@ -1,4 +1,4 @@
-import { PartialPath, To } from "@/lib/history";
+import { PartialPath, To } from "lib/history";
 import { useEffect, useRef } from "react";
 import useHistory from "../hooks/useHistory";
 

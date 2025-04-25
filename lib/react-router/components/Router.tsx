@@ -1,4 +1,4 @@
-import { createHashHistory, History } from "@/lib/history";
+import { createHashHistory, History } from "lib/history";
 import { HistoryContext, RouterContext } from "../contexts";
 import { useEffect, useState } from "react";
 import { RouterContextType } from "../typings";
@@ -28,7 +28,7 @@ export default function Router({
       }));
     });
 
-    if(location.pathname === ''){
+    if(location.pathname === ''||location.pathname === '/'){
       history.replace('/')
     }
 

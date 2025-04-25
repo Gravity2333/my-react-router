@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Match, RouteInputProps, RouteProps } from "../typings";
 import { RouterContext } from "../contexts";
 import { matchPath } from "../utils";
-import { Location } from "@/lib/history";
+import { Location } from "lib/history";
 
 export default function Route(props: RouteProps) {
   const {

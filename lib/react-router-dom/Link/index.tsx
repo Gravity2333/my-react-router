@@ -1,5 +1,5 @@
-import { To } from "@/lib/history";
-import useHistory from "@/lib/react-router/hooks/useHistory";
+import { To } from "lib/history";
+import useHistory from "lib/react-router/hooks/useHistory";
 
 export default function Link({
   to,

@@ -1,5 +1,5 @@
 import React from "react";
-import {useHistory} from "@/lib/react-router-dom";
+import {useHistory} from "lib/react-router-dom";
 import styles from './index.less'
 
 const NotFoundPage = () => {

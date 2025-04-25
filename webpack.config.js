@@ -23,7 +23,7 @@ module.exports = {
     extensions: [".tsx", ".ts", ".jsx", ".jsx", ".less"],
     mainFiles: ["index"],
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      "lib": path.resolve(__dirname, "./lib"),
     },
   },
   module: {

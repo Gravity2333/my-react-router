@@ -5,7 +5,7 @@ import {
   Redirect,
   Route,
   Switch,
-} from "./lib/react-router-dom";
+} from "lib/react-router-dom";
 import styles from "./styles.less";
 import { Suspense } from "react";
 import LoadingPage from "./components/LoadingPage";
@@ -16,13 +16,13 @@ function App() {
     <HashRouter>
       <nav style={{ display: "flex" }} className={styles["global-nav"]}>
         <NavLink to="/home" activeClassName={styles["global-nav__match"]}>
-          Home
-        </NavLink>
-        <NavLink to="/about" activeClassName={styles["global-nav__match"]}>
-          About
+          首页
         </NavLink>
         <NavLink to="/docs" activeClassName={styles["global-nav__match"]}>
-          Docs
+          文档
+        </NavLink>
+        <NavLink to="/about" activeClassName={styles["global-nav__match"]}>
+          关于
         </NavLink>
       </nav>
 

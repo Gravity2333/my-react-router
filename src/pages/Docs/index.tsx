@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import DocSidebar from "./components/SideBar";
 import styles from "./index.less";
-import { Outlet } from "@/lib/react-router-dom";
+import { Outlet } from "lib/react-router-dom"
 
 const DocPage: React.FC = () => {
   const sidebarItems = [

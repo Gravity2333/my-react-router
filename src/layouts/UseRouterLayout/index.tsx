@@ -1,5 +1,5 @@
 import styles from "./index.less";
-import { UseRouterIncomingProps } from "@/libs/useRouter/core/router/typings";
+import { UseRouterIncomingProps } from "libs/useRouter/core/router/typings";
 import {Outlet} from "@/hooks/useRouter";
 
 export default function UseRouterLayout({ history }: UseRouterIncomingProps) {

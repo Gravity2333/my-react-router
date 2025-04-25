@@ -1,6 +1,6 @@
-import Outlet from "@/libs/router/Outlet";
+import Outlet from "libs/router/Outlet";
 import styles from "./index.less";
-import useHistory from "@/libs/router/hooks/useHistory";
+import useHistory from "libs/router/hooks/useHistory";
 
 export default function GlobalLayout() {
   const history = useHistory();

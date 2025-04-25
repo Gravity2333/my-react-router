@@ -1,8 +1,8 @@
-import { To } from "@/lib/history";
-import { RouterContext } from "@/lib/react-router/contexts";
-import useHistory from "@/lib/react-router/hooks/useHistory";
-import useLocation from "@/lib/react-router/hooks/useLocation";
-import { RouteInputProps } from "@/lib/react-router/typings";
+import { To } from "lib/history";
+import { RouterContext } from "lib/react-router/contexts";
+import useHistory from "lib/react-router/hooks/useHistory";
+import useLocation from "lib/react-router/hooks/useLocation";
+import { RouteInputProps } from "lib/react-router/typings";
 import { useContext } from "react";
 
 export default function NavLink({

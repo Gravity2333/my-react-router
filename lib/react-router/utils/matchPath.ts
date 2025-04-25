@@ -1,4 +1,4 @@
-import { Pathname } from "@/lib/history";
+import { Pathname } from "lib/history";
 import { Match, RouteProps } from "../typings";
 import { pathToRegexp } from "path-to-regexp";
 
