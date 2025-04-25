@@ -39,10 +39,30 @@ function App() {
           ></Route>
           <Route
             path="/docs"
-            component={React.lazy(
-              () => import("./pages/Docs/components/Install")
-            )}
-          ></Route>
+            component={React.lazy(() => import("./pages/Docs"))}
+          >
+            <Switch>
+              <Redirect from="/docs" to="/docs/introduce" />
+              <Route
+                path="/docs/introduce"
+                component={React.lazy(
+                  () => import("./pages/Docs/components/DocContent")
+                )}
+              />
+              <Route
+                path="/docs/install"
+                component={React.lazy(
+                  () => import("./pages/Docs/components/Install")
+                )}
+              />
+              <Route
+                path="/docs/api"
+                component={React.lazy(
+                  () => import("./pages/Docs/components/ApiDoc")
+                )}
+              />
+            </Switch>
+          </Route>
           <Route component={NotFoundPage} />
         </Switch>
       </Suspense>

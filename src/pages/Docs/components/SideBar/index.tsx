@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./index.less";
+import { NavLink } from "@/lib/react-router-dom";
 
 interface SidebarProps {
   items: { label: string; link: string }[];
@@ -12,9 +13,7 @@ const Sidebar: React.FC<SidebarProps> = ({ items }) => {
       <ul className={styles.menu}>
         {items.map((item, index) => (
           <li key={index} className={styles.menuItem}>
-            <a href={item.link} className={styles.menuLink}>
-              {item.label}
-            </a>
+             <NavLink to={item.link}>{item.label}</NavLink>
           </li>
         ))}
       </ul>

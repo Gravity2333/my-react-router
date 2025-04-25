@@ -28,6 +28,10 @@ export default function Router({
       }));
     });
 
+    if(location.pathname === ''){
+      history.replace('/')
+    }
+
     return unlisten;
   }, []);
   
