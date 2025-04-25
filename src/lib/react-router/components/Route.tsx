@@ -11,7 +11,6 @@ export default function Route(props: RouteProps) {
     render,
     children,
     computedMatch,
-    exact = false,
   } = props;
   /** 获得当前location */
   const routerContext = useContext(RouterContext);
@@ -19,7 +18,7 @@ export default function Route(props: RouteProps) {
   /** 计算match */
   const match: Match | null = computedMatch
     ? computedMatch
-    : !exact && !!path
+    : !!path
     ? matchPath(routerContext.location.pathname, props)
     : routerContext.match;
 

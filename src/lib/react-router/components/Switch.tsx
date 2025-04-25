@@ -8,8 +8,13 @@ import React from "react";
  * switch组件，保证其children中，只有一个匹配到
  * @returns
  */
-export default function Switch({ children = [] }: { children: JSX.Element[] }) {
+export default function Switch({
+  children = [],
+}: {
+  children?: JSX.Element[];
+}) {
   const routerContext = useContext(RouterContext);
+  
   for (const child of children) {
     const childProps = child.props;
     const { exact = false, sensitive = false } = childProps;
@@ -18,9 +23,7 @@ export default function Switch({ children = [] }: { children: JSX.Element[] }) {
     /** 计算computedMatch */
     const computedMatch: Match | null = path
       ? matchPath(routerContext.location.pathname, { path, exact, sensitive })
-      : exact
-      ? routerContext.match
-      : null;
+      : routerContext.match
 
     if (computedMatch) {
       return React.cloneElement(child, { computedMatch });

@@ -28,12 +28,9 @@ export default function Router({
       }));
     });
 
-    /** 初始化push(/) */
-    history.push("/");
-
     return unlisten;
   }, []);
-
+  
   return (
     <RouterContext.Provider value={routerContextValue}>
       <HistoryContext.Provider value={history}>
