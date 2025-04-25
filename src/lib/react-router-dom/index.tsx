@@ -1,6 +1,8 @@
 /** 统一导出 */
 import BrowserRouter from "./BrowserRouter";
 import HashRouter from "./HashRouter";
-export * from '../react-router'
+import Link from "./Link";
+import NavLink from "./NavLink";
+export * from "../react-router";
 
-export { BrowserRouter, HashRouter };
+export { BrowserRouter, HashRouter, Link, NavLink };

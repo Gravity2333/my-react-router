@@ -5,7 +5,7 @@ import Router from "@/lib/react-router/components/Router";
 export default function BrowserRouter({
   children,
 }: {
-  children?: JSX.Element;
+  children?: any;
 }) {
   return <Router history={createBrowserHistory({})}>{children}</Router>;
 }
