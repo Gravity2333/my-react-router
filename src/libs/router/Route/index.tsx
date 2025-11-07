@@ -18,7 +18,7 @@ interface RouteProps {
    * 子组件， 优先级最低 如果有component  render 则忽略
    * 默认会放到 outlet里面
    */
-  children?: React.ReactNode;
+  children?: React.ReactNode | ((...args: any[]) => React.ReactNode);
   /** 当前的路径信息 用来匹配路由 */
   location?: Location;
   /** 已经计算完的match对象 如果传入 优先使用匹配 Switch使用 */
@@ -62,12 +62,8 @@ function RouteCore({
   render,
   component,
   children,
-}: {
-  location: Location;
+}: Pick<RouteProps, "location" | "render" | "component" | "children"> & {
   match: Match;
-  render?: Function;
-  component?: React.ComponentType;
-  children?: any;
 }) {
   const props = {
     location,

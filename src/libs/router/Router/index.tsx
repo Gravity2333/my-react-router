@@ -22,8 +22,8 @@ export const RouterContext = createContext<{
   match: Match | null;
   history: History;
   location: Location;
-  outlet?: JSX.Element;
-  loadingPage?: JSX.Element;
+  outlet?: React.ReactNode;
+  loadingPage?: React.ReactNode;
 }>({} as any);
 
 /* 下发 history */
@@ -67,8 +67,8 @@ export default function Router({
         }
       });
     });
-    if(history.location.pathname === ''){
-      history.push('/')
+    if (history.location.pathname === "") {
+      history.push("/");
     }
   }, []);
 
