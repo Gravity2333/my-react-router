@@ -1,21 +1,31 @@
-import { pathToRegexp } from "path-to-regexp";
 import { Match, RouterContext } from "../Router";
 import { Location } from "@/libs/history";
 import React, { Suspense } from "react";
 import matchPath from "../utils/matchPath";
 
-export default function Route(props: {
+interface RouteProps {
+  /** 传入匹配的路径信息 */
   path?: string;
+  /** 渲染函数 优先级高于component */
   render?: (...props: any) => React.ReactNode;
+  /** 传入的渲染组件 */
   component?: React.ComponentType;
+  /** 精确匹配 是否匹配到末尾 */
   exact?: boolean;
+  /** 大小写是否敏感 */
   sensitive?: boolean;
+  /**
+   * 子组件， 优先级最低 如果有component  render 则忽略
+   * 默认会放到 outlet里面
+   */
   children?: React.ReactNode;
-  // 上层传下来的location
+  /** 当前的路径信息 用来匹配路由 */
   location?: Location;
-  // switch传递额computedMatch
+  /** 已经计算完的match对象 如果传入 优先使用匹配 Switch使用 */
   computedMatch?: Match;
-}) {
+}
+
+export default function Route(props: RouteProps) {
   return (
     <RouterContext.Consumer>
       {(context) => {
