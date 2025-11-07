@@ -27,7 +27,7 @@ export default function matchPath(
     }
     /** 生成正则 */
     const { regexp, keys } = pathToRegexp(path, {
-      end: exact,
+      end: exact, //   end 的意思是：是否要求路径完全匹配（匹配到末尾）。
       sensitive,
     });
 
